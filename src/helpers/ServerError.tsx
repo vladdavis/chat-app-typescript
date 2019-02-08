@@ -8,7 +8,7 @@ class ServerError extends Component {
     error: ''
   }
 
-  globalServerErrors = [
+  private globalServerErrors = [
     'error',
     'connect_error',
     'reconnect',
@@ -16,7 +16,7 @@ class ServerError extends Component {
     'INVALIDATE_USER'
   ];
 
-  clearErrorTimeout(time: number){
+  private clearErrorTimeout(time: number){
     setTimeout(() => {
       this.setState({error: ''});
     }, 3000)
@@ -25,7 +25,7 @@ class ServerError extends Component {
   componentDidMount(){
     this.globalServerErrors.forEach(error => {
       socket.on(error, () => {
-        this.setState({error: (SERVER_ERRORS as any)[error]});
+        this.setState({error: SERVER_ERRORS[error]});
         // Hide server error after the app got these errors
         if(error === 'reconnect' || error === 'INVALIDATE_USER')
           this.clearErrorTimeout(3000);

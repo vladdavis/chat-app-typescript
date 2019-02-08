@@ -1,4 +1,4 @@
-export const SERVER_ERRORS = {
+export const SERVER_ERRORS: any = {
   'error': 'Something went wrong',
   'connect_error': 'Server is not available',
   'disconnect': 'Disconnect. We try to reconnect you',
@@ -6,7 +6,7 @@ export const SERVER_ERRORS = {
   'INVALIDATE_USER': 'Something went wrong'
 }
 
-export const VALIDATIONS_ERRORS = {
+export const VALIDATIONS_ERRORS: any = {
   'short_username': 'Username mustn\'t be empty',
   'long_username': 'Username must be less than 32 characters',
   'short_message': 'Message mustn\'t be empty',

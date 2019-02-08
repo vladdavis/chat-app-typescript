@@ -10,7 +10,7 @@ interface IProps {
 
 export default function WebSocketMiddleware({ dispatch }: IProps){
   serverTypesEvent.forEach(eventType => {
-    socket.on(eventType, (data: any) => {
+    socket.on(eventType, (data?: any) => {
       dispatch({
         type: eventType,
         payload: data

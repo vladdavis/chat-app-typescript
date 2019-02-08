@@ -13,18 +13,17 @@ class ChatForm extends Component<Props> {
 
   private message = React.createRef<HTMLInputElement>();
 
-  //TODO: desided with any
-  sendMessage = (e: React.SyntheticEvent) => {
+  private sendMessage = (e: React.SyntheticEvent): void => {
     e.preventDefault();
-    const userId = +this.props.user.userId;
-    const message = (this as any).message.current.value;
-
-    const isSended = this.props.sendMessage({
-      userId,
-      text: message
-    });
-
-    if(isSended) (this as any).message.current.value = '';
+    const userId = this.props.user.userId ? +this.props.user.userId : null;
+    const message = this.message.current;
+    if(message && userId){
+      const isSended = this.props.sendMessage({
+        userId,
+        text: message.value
+      });
+      if(isSended) message.value = '';
+    }
   }
 
   render(){

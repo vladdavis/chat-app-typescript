@@ -28,4 +28,4 @@ To run server:
 * REST for login
 * Implement your own redux middleware for dispatching asynchronous actions
 * Implement your own redux middleware for WebSockets interaction
-* Typescript
+* TypeScript

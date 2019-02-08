@@ -5,12 +5,12 @@ import './login.css';
 import LoginForm from './LoginForm';
 import { UserState } from '../../types/index';
 
-export interface Props {
+export interface IProps {
   user: UserState;
   signIn: (username: string) => void;
 }
 
-class Login extends Component<Props> {
+class Login extends Component<IProps> {
   render(){
     const { user, signIn } = this.props;
 

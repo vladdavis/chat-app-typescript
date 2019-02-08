@@ -6,7 +6,7 @@ export interface StoreState {
 
 export interface UserState {
   isSignIn: boolean;
-  userId: number;
+  userId: number | null;
   error: string;
 };
 

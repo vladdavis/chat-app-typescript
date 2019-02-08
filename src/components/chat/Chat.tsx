@@ -5,15 +5,15 @@ import Message from './Message';
 import ChatForm from './ChatForm';
 import { UserState, MessageDataState, SendMessage } from '../../types/index';
 
-export interface Props {
+export interface IProps {
   user: UserState;
   messages: MessageDataState[];
   messagesError: string;
   getMessages: () => void;
-  sendMessage: (msg: SendMessage) => any;
+  sendMessage: (msg: SendMessage) => boolean;
 }
 
-class Chat extends Component<Props> {
+class Chat extends Component<IProps> {
 
   private messageContent = React.createRef<HTMLDivElement>();
 
@@ -21,11 +21,13 @@ class Chat extends Component<Props> {
     this.props.getMessages();
   }
 
-  componentDidUpdate(prevProps: Props){
+  componentDidUpdate(prevProps: IProps){
     // Scroll messages down after the user received new messages
     if(this.props.messages.length !== prevProps.messages.length){
-      const messageContent: any = this.messageContent.current;
-      messageContent.scrollTop = messageContent.scrollHeight;
+      const messageContent = this.messageContent.current;
+      if(messageContent){
+        messageContent.scrollTop = messageContent.scrollHeight;
+      }
     }
   }
 

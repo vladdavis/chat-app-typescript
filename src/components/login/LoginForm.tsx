@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 
 import ValidationError from '../../helpers/ValidationError';
 
-export interface Props {
+export interface IProps {
   error: string;
   signIn: (username: string) => void;
 }
 
-class LoginForm extends Component<Props> {
+class LoginForm extends Component<IProps> {
 
   private username = React.createRef<HTMLInputElement>();
 
-  private signIn = (e: React.SyntheticEvent) => {
+  private signIn = (e: React.SyntheticEvent): void => {
     e.preventDefault();
-    const username = (this as any).username.current.value;
-    this.props.signIn(username);
+    const username = this.username.current;
+    if(username){
+      this.props.signIn(username.value);
+    }
   }
 
   render(){

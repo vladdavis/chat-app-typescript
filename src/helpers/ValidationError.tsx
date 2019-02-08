@@ -8,7 +8,7 @@ interface IProp {
 const ValidationError = ({ error }: IProp) => (
   <>
     <div className="validationError">
-      {(VALIDATIONS_ERRORS as any)[error] && (VALIDATIONS_ERRORS as any)[error]}
+      {VALIDATIONS_ERRORS[error] && VALIDATIONS_ERRORS[error]}
     </div>
   </>
 )

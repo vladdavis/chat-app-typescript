@@ -5,7 +5,7 @@ import { getActionHendleError } from '../helpers/getActionHendleError';
 import { Dispatch } from 'redux';
 
 
-export const signIn = (username: string) => (dispatch: Dispatch) => {
+export const signIn = (username: string) => (dispatch: Dispatch): void => {
   const handleError = getActionHendleError(
     VALIDATION_ERROR_USERNAME,
     dispatch

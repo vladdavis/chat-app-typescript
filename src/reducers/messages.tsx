@@ -1,22 +1,17 @@
 import { SEND_MESSAGE, GET_ALL_MESSAGES, VALIDATION_ERROR_MESSAGE } from '../constants/serverActions';
+import { MessagesState } from '../types/index';
 
-const initialState = {
+interface IMessageAction {
+  type: string;
+  payload: any;
+}
+
+const initialState: MessagesState = {
   data: [],
   error: ''
 }
 
-interface MessageAction {
-  type: string;
-  payload: any;
-}
-/*interface PayloadMessageAction {
-  id: number;
-  username: string;
-  userId: number;
-  text: string;
-}*/
-
-const messages = (state = initialState, { type, payload }: MessageAction) => {
+const messages = (state = initialState, { type, payload }: IMessageAction): MessagesState => {
   switch(type){
     case GET_ALL_MESSAGES:
       return {

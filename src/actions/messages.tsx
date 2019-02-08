@@ -6,11 +6,11 @@ import { getActionHendleError } from '../helpers/getActionHendleError';
 import { SendMessage } from '../types/index';
 
 
-export const getMessages = () => (dispatch: Dispatch) => {
+export const getMessages = () => (dispatch: Dispatch): void => {
   dispatch(emit(GET_ALL_MESSAGES));
 }
 
-export const sendMessage = (msg: SendMessage) => (dispatch: Dispatch) => {
+export const sendMessage = (msg: SendMessage) => (dispatch: Dispatch): boolean => {
   const handleError = getActionHendleError(
     VALIDATION_ERROR_MESSAGE,
     dispatch
@@ -20,4 +20,5 @@ export const sendMessage = (msg: SendMessage) => (dispatch: Dispatch) => {
     dispatch(emit(SEND_MESSAGE, msg));
     return true;
   }
+  return false;
 }
