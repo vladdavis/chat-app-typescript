@@ -3,10 +3,10 @@ import { Redirect } from 'react-router-dom';
 
 import './login.css';
 import LoginForm from './LoginForm';
-import { UserState } from '../../types/index';
+import { IUserState } from '../../types/index';
 
 export interface IProps {
-  user: UserState;
+  user: IUserState;
   signIn: (username: string) => void;
 }
 

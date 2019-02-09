@@ -1,6 +1,6 @@
 .login{
   text-align: center;
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -10,7 +10,6 @@
   border: solid 1px #4498ff;
 }
 .login__form{
-  max-width: 300px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;

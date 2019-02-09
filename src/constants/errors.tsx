@@ -8,7 +8,7 @@ export const SERVER_ERRORS: any = {
 
 export const VALIDATIONS_ERRORS: any = {
   'short_username': 'Username mustn\'t be empty',
-  'long_username': 'Username must be less than 32 characters',
+  'long_username': 'Username mustn\'t be longer than 32 characters',
   'short_message': 'Message mustn\'t be empty',
-  'long_message': 'Message must be less than 255 characters'
+  'long_message': 'Message must be less than 256 characters'
 }

@@ -1,5 +1,4 @@
 import { Dispatch } from 'redux';
-import { StoreState } from '../../types/index';
 import { socket, serverTypesEvent } from '../../socket/socket';
 
 const WEBSOCKET = 'WEBSOCKET';

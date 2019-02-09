@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { StoreState } from '../types/index';
+import { IStoreState } from '../types/index';
 
 interface IProps {
   isSignIn: boolean;
@@ -23,7 +23,7 @@ class PrivateRoute extends Component<IProps> {
   }
 }
 
-const mapStateToProps = (state: StoreState) => ({
+const mapStateToProps = (state: IStoreState) => ({
   isSignIn: state.user.isSignIn
 })
 

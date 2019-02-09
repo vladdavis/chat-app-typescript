@@ -3,10 +3,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import AsyncFunctionMiddleware from './middleware/AsyncFunctionMiddleware';
 import WebSocketMiddleware from './middleware/WebSocketMiddleware';
 import rootReducer from '../reducers/index';
-import { StoreState } from '../types/index'
+import { IStoreState } from '../types/index'
 
 
-const store = createStore<StoreState, any, any, any>(
+const store = createStore<IStoreState, any, any, any>(
   rootReducer,
   compose(
     applyMiddleware((AsyncFunctionMiddleware as any)),

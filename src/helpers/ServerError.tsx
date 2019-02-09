@@ -26,9 +26,11 @@ class ServerError extends Component {
     this.globalServerErrors.forEach(error => {
       socket.on(error, () => {
         this.setState({error: SERVER_ERRORS[error]});
+
         // Hide server error after the app got these errors
-        if(error === 'reconnect' || error === 'INVALIDATE_USER')
+        if(error === 'reconnect' || error === 'INVALIDATE_USER'){
           this.clearErrorTimeout(3000);
+        }
       });
     })
   }

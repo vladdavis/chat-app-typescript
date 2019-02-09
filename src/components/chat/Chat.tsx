@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import './chat.css';
 import Message from './Message';
 import ChatForm from './ChatForm';
-import { UserState, MessageDataState, SendMessage } from '../../types/index';
+import { IUserState, IMessageDataState, ISendMessage } from '../../types/index';
 
 export interface IProps {
-  user: UserState;
-  messages: MessageDataState[];
+  user: IUserState;
+  messages: IMessageDataState[];
   messagesError: string;
   getMessages: () => void;
-  sendMessage: (msg: SendMessage) => boolean;
+  sendMessage: (msg: ISendMessage) => boolean;
 }
 
 class Chat extends Component<IProps> {

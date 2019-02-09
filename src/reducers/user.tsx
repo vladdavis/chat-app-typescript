@@ -1,5 +1,5 @@
 import { SIGN_IN, VALIDATION_ERROR_USERNAME, INVALIDATE_USER } from '../constants/serverActions';
-import { UserState } from '../types/index';
+import { IUserState } from '../types/index';
 
 interface UserAction {
   type: string;
@@ -10,13 +10,13 @@ interface UserAction {
   }
 }
 
-const initialState: UserState = {
+const initialState: IUserState = {
   isSignIn: false,
   userId: null,
   error: ''
 }
 
-const user = (state = initialState, { type, payload }: UserAction): UserState => {
+const user = (state = initialState, { type, payload }: UserAction): IUserState => {
   switch(type){
     case SIGN_IN:
       return {

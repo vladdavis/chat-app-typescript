@@ -1,9 +1,9 @@
 import { Dispatch } from 'redux';
-import { StoreState } from '../../types/index';
+import { IStoreState } from '../../types/index';
 
 interface IProps {
   dispatch: Dispatch;
-  state: StoreState;
+  state: IStoreState;
 }
 
 export default function AsyncFunctionMiddleware({ dispatch, state }: IProps) {

@@ -13,6 +13,7 @@ class LoginForm extends Component<IProps> {
 
   private signIn = (e: React.SyntheticEvent): void => {
     e.preventDefault();
+
     const username = this.username.current;
     if(username){
       this.props.signIn(username.value);

@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 
 import Login from '../components/login/Login';
 import { signIn } from '../actions/user';
-import { StoreState } from '../types/index';
+import { IStoreState } from '../types/index';
 
-const mapStateToProps = (state: StoreState) => ({
+const mapStateToProps = (state: IStoreState) => ({
   user: state.user
 })
 
